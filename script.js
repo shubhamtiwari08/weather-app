@@ -15,17 +15,14 @@ function debounce(func, delay) {
     };
 }
 
-
-
 function fetchData(name) {
      $.ajax({
         type: "GET",
-        url: `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=BvjEmCY8TsPw4ipA7DX0CicsHTWMGs6u&q=${name}`,
+        url: `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=BvjEmCY8TsPw4ipA7DX0CicsHTWMGs6u&q=${name}`,
         dataType: "json",  
         crossDomain: true,
         success: function (response) {
            console.log(response)
-
           
 
             $('.search-list').empty()
@@ -77,7 +74,7 @@ $(document).on("click",'.search-list-city',function() {
       
     $.ajax({
             type: "GET",
-            url: `http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${data?.citycode}?apikey=BvjEmCY8TsPw4ipA7DX0CicsHTWMGs6u&details=true`,
+            url: `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${data?.citycode}?apikey=BvjEmCY8TsPw4ipA7DX0CicsHTWMGs6u&details=true`,
             dataType: "json",
             crossDomain: true,
             success: function (response) {
